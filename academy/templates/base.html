@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} Icons {% endcomment %}
+    <link rel="stylesheet" href="{% static 'icons/css/all.min.css' %}">
+    {% comment %} Styles {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block css_files %}{% endblock%}
+    {% comment %} Title {% endcomment %}
+    <title>{% block page_title %}{% endblock %}</title>
+</head>
+
+<body onresize="maximize()">
+    {% include 'partials/_header.html' %}
+    {% block content %}{% endblock %}
+    {% include 'partials/_footer.html' %}
+    {% comment %} Scripts {% endcomment %}
+    <script src="{% static 'icons/js/all.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        let categories_level_one = JSON.parse("{{categories_level_one|escapejs}}");
+        let categoryTwoCounter = 1;
+        function getCategories(categories) {
+            let listId = "category-list-level-one-1";
+            categories.forEach(category => {
+                let pTag = document.createElement("p");
+                pTag.innerHTML = category.name;
+
+                let aTag = document.createElement("a");
+                aTag.className = `category-link-level-${category.level}`;
+                aTag.href = `/courses/${category.slug}`;
+                aTag.appendChild(pTag);
+
+                let liTag = document.createElement("li");
+                liTag.className = `category-item-level-${category.level}`;
+                liTag.appendChild(aTag);
+
+                if (category.level == 2) {
+                    listId = `category-list-level-two-${categoryTwoCounter - 1}`;
+                    document.getElementById(listId).appendChild(liTag);
+                } else {
+                    let ulTag = document.createElement("ul");
+                    ulTag.id = `category-list-level-two-${categoryTwoCounter}`;
+                    ulTag.className = "category-list-level-two";
+                    liTag.appendChild(ulTag);
+                    categoryTwoCounter++;
+
+                    document.getElementById(listId).appendChild(liTag);
+                }
+                if (category.sub_categories != null) {
+                    getCategories(category.sub_categories);
+                }
+            });
+        }
+        getCategories(categories_level_one.categories);
+    </script>
+    {% block js_files %}{% endblock %}
+</body>
+
+</html>

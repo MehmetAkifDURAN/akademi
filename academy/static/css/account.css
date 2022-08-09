@@ -1,0 +1,89 @@
+/* account */
+main>section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 2rem 0;
+}
+
+.account-container {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 0 1px #d1d7dc, 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    border-radius: .6rem;
+}
+
+.account-form-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6rem;
+    border-bottom: 1px solid #d1d7dc;
+}
+
+.account-form-title h1 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #4ca1af;
+}
+
+.account-form {
+    padding: 1.6rem;
+}
+
+.form-item {
+    margin-bottom: 1.6rem;
+}
+
+.form-control {
+    width: 36rem;
+    border: 1px solid #d1d7dc;
+    border-radius: .3rem;
+    padding: 1.6rem;
+    color: #4ca1af;
+    outline: none;
+}
+
+.form-control:focus {
+    border: 1px solid #4ca1af;
+}
+
+.account-button {
+    width: 100%;
+    height: 4.8rem;
+    background: #4ca1af;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: .8rem 1.6rem;
+    border-radius: .3rem;
+    outline: none;
+    border: none;
+    transition: background-color .4s ease;
+}
+
+.account-button:hover {
+    background: #205B6B;
+    cursor: pointer;
+}
+
+/*alert*/
+.alert-danger {
+    width: 36rem;
+    word-wrap: break-word;
+    background-color: #f8d7da;
+    color: #842029;
+    padding: .8rem;
+    font-size: 1.4rem;
+    border: 1px solid #f5c2c7;
+    border-radius: .4rem;
+}
+
+.field-errors {
+    margin: .8rem 0 1.6rem;
+}
+
+.non-field-errors {
+    margin-bottom: 1.6rem;
+}

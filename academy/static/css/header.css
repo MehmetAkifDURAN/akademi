@@ -1,0 +1,231 @@
+/* header */
+header {
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo */
+.logo-link {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 700;
+    padding: 1rem;
+    margin-right: 1.6rem;
+    color: #407C8C;
+}
+
+/* search-container */
+.search-container {
+    flex-grow: 1;
+    margin: 0 1.6rem;
+}
+
+.search-form {
+    width: 100%;
+    height: 4rem;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    height: 100%;
+    padding: .8rem 6rem .8rem 1.2rem;
+    border: 2px solid #f3f3f3;
+    background: #f3f3f3;
+    border-radius: .6rem;
+    color: #4682B4;
+    outline: none;
+    transition: all .3s;
+}
+
+.search-input:focus {
+    background: #fff;
+    border: 2px solid #4682B4;
+}
+
+.search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.8rem;
+    height: 4rem;
+    font-size: 1.8rem;
+    background: #f3f3f3;
+    color: #4682B4;
+    outline: none;
+    border: 2px solid #f3f3f3;
+    border-top-right-radius: .6rem;
+    border-bottom-right-radius: .6rem;
+    transition: all .3s;
+}
+
+.search-button:hover {
+    cursor: not-allowed;
+}
+
+/* account-nav */
+.account-nav-list {
+    display: flex;
+}
+
+.account-nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    height: 100%;
+    color: #a0a0a0;
+}
+
+.account-nav-link svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.account-nav-link:hover {
+    color: #00b4db;
+    cursor: pointer;
+}
+
+.account-nav-list-item:nth-last-child(1) {
+    position: relative;
+}
+
+.account-nav-list-item:nth-last-child(1) .account-nav-link .user-profile-dropdown-button {
+    background: #4682B4;
+    color: #fff;
+    padding: .6rem;
+    font-weight: 700;
+    border-radius: 50%;
+}
+
+.account-dropdown {
+    display: none;
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    background: #fff;
+    min-width: 27rem;
+    max-width: 27rem;
+    box-shadow: 0 0 0 1px #d1d7dc, 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    z-index: 1000;
+}
+
+.account-nav-list-item:nth-last-child(1):hover .account-dropdown,
+.account-dropdown:hover {
+    display: block;
+}
+
+.account-dropdown-item:nth-child(1) .account-dropdown-link {
+    display: flex;
+    align-items: center;
+    padding: 1.6rem;
+}
+
+.account-dropdown-link {
+    display: flex;
+    align-items: center;
+    padding: .8rem 1.6rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #1c1d1f;
+    transition: all .15s ease;
+}
+
+.account-dropdown-link:hover {
+    color: #00b4db;
+}
+
+.account-dropdown-item:not(:nth-child(1)) .account-dropdown-link p {
+    margin-left: .8rem;
+}
+
+.account-dropdown-link svg {
+    color: #6a6f73;
+    transition: all .15s ease;
+}
+
+.account-dropdown-link:hover svg {
+    color: #00b4db;
+}
+
+.user-avatar {
+    background: #4682B4;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.user-info {
+    margin-left: .8rem;
+    transition: all .15s ease;
+}
+
+.account-dropdown-item:nth-child(1) .account-dropdown-link:hover .user-info {
+    color: #00b4db;
+}
+
+.user-fullname {
+    font-weight: 700;
+}
+
+.user-email {
+    font-size: 1.2rem;
+    color: #6a6f73;
+}
+
+.account-dropdown-item-divider {
+    border-top: 1px solid #d1d7dc;
+}
+
+/* account button */
+.login-link,
+.register-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: .8rem;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+.login-link {
+    background: #fff;
+    border: 1px solid #2C3E50;
+    color: #2C3E50;
+}
+
+.register-link {
+    background: #2C3E50;
+    border: 1px solid #2C3E50;
+    color: #fff;
+}
+
+.login-link:hover {
+    background: #2C3E50;
+    border: 1px solid #2C3E50;
+    color: #fff;
+}
+
+.register-link:hover {
+    background: #131630;
+    border: 1px solid #131630;
+    color: #fff;
+}

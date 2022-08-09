@@ -1,0 +1,129 @@
+<header>
+    <section class="header-container">
+        <section class="logo-container">
+            <a href="{% url 'home_page' %}" class="logo-link">Akademi</a>
+        </section>
+        <section class="nav-container">
+            {% include 'partials/_navbar.html' %}
+        </section>
+        <section class="search-container">
+            <form action="" method="GET" class="search-form">
+                <input type="text" name="search_input" id="search-input" class="search-input"  placeholder="Aramak istediğiniz herşey için..." oninput="onChange(this)" onfocus="onFocus(this)">
+                <button type="submit" disabled id="search-button" class="search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </section>
+        <section class="account-nav">
+            <ul class="account-nav-list">
+                {% if user.is_authenticated %}
+                <li class="account-nav-list-item">
+                    <a href="" class="account-nav-link">
+                        <p>Eğitmen</p>
+                    </a>
+                </li>
+                <li class="account-nav-list-item">
+                    <a href="" class="account-nav-link">
+                        <p>Öğrenim İçeriğim</p>
+                    </a>
+                </li>
+                <li class="account-nav-list-item">
+                    <a href="" class="account-nav-link">
+                        <i class="fa-solid fa-heart"></i>
+                    </a>
+                </li>
+                <li class="account-nav-list-item">
+                    <a href="" class="account-nav-link">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+                <li class="account-nav-list-item">
+                    <a href="" class="account-nav-link">
+                        <div class="user-profile-dropdown-button">
+                            <p>{{ request.user.first_name.0 }}{{ request.user.last_name.0 }}</p>
+                        </div>
+                    </a>
+                    <ul class="account-dropdown">
+                        <li class="account-dropdown-item">
+                            <a href="" class="account-dropdown-link">
+                                <div class="user-avatar">
+                                    <p>{{ request.user.first_name.0 }}{{ request.user.last_name.0 }}</p>
+                                </div>
+                                <div class="user-info">
+                                    {% if request.user.first_name and request.user.first_name|length <= 25 %}
+                                        <p class="user-fullname">{{ request.user.first_name }}</p>
+                                    {% endif %}
+                                    {% if request.user.email|length <= 30 %}
+                                        <p class="user-email">{{ request.user.email }}</p>
+                                    {% endif %}
+                                </div>
+                            </a>
+                        </li>
+                        <li class="account-dropdown-item">
+                            <div class="account-dropdown-item-divider"></div>
+                        </li>
+                        <li class="account-dropdown-item">
+                            <a href="/admin" class="account-dropdown-link">
+                                <i class="fa-brands fa-leanpub"></i>
+                                <p>Yönetim Paneli</p>
+                            </a>
+                        </li>
+                        <li class="account-dropdown-item">
+                            <div class="account-dropdown-item-divider"></div>
+                        </li>
+                        <li class="account-dropdown-item">
+                            <a href="" class="account-dropdown-link">
+                                <i class="fa-brands fa-leanpub"></i>
+                                <p>Öğrenim İçeriğim</p>
+                            </a>
+                        </li>
+                        <li class="account-dropdown-item">
+                            <a href="" class="account-dropdown-link">
+                                <i class="fa-solid fa-heart"></i>
+                                <p>İstek Listesi</p>
+                            </a>
+                        </li>
+                        <li class="account-dropdown-item">
+                            <a href="" class="account-dropdown-link">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <p>Sepetim</p>
+                            </a>
+                        </li>
+                        <li class="account-dropdown-item">
+                            <a href="" class="account-dropdown-link">
+                                <i class="fa-solid fa-gauge-high"></i>
+                                <p>Eğitmen Kontrol Paneli</p>
+                            </a>
+                        </li>
+                        <li class="account-dropdown-item">
+                            <div class="account-dropdown-item-divider"></div>
+                        </li>
+                        <li class="account-dropdown-item">
+                            <a href="{% url 'logout' %}" class="account-dropdown-link">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <p>Oturumu kapat</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                {% else %}
+                <li class="account-nav-list-item">
+                    <a href="" class="account-nav-link">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </li>
+                <li class="account-nav-list-item">
+                    <a href="{% url 'login' %}" class="login-link">
+                        <p>Oturum Aç</p>
+                    </a>
+                </li>
+                <li class="account-nav-list-item">
+                    <a href="{% url 'register' %}" class="register-link">
+                        <p>Kaydol</p>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </section>
+    </section>
+</header>

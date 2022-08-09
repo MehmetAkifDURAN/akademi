@@ -1,0 +1,67 @@
+/* Alerts */
+main section {
+    padding: 2rem 0;
+}
+
+.alert-container {
+    width: 100%;
+    padding: .8rem;
+    box-shadow: 0 0 0 1px #d1d7dc, 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    border-radius: .6rem;
+}
+
+/* Success */
+/* Info */
+/* Warning */
+/* Error */
+.alert-danger {
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+    background-color: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+    border-radius: .4rem;
+    padding: 1.6rem;
+}
+
+.alert-danger-icon {
+    font-size: 7.2rem;
+}
+
+.alert-danger h1 {
+    font-size: 3rem;
+}
+
+.alert-danger p {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.error-detail {
+    display: flex;
+    width: 100%;
+    word-wrap: break-word;
+    background-color: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+    border-radius: .4rem;
+    margin-top: .8rem;
+    padding: 1.6rem;
+}
+
+.error-detail-icon {
+    font-size: 10rem;
+    margin-right: 5rem;
+}
+
+.error-detail-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.error-detail-text p {
+    text-indent: 1rem;
+}

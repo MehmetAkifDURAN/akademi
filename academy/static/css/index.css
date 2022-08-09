@@ -1,0 +1,78 @@
+/* home page */
+main section {
+    padding: 2rem 0;
+}
+
+.course-list-container {
+    width: 100%;
+    padding: .8rem;
+    box-shadow: 0 0 0 1px #d1d7dc, 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    border-radius: .6rem;
+}
+
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.course-list-item {
+    width: 20%;
+    padding: .8rem;
+}
+
+.card {
+    display: block;
+    box-shadow: 0 0 0 1px #d1d7dc;
+}
+
+.card:hover .card-img-box .img-overlay {
+    background: rgb(28, 29, 31, .5);
+}
+
+.card-img-box {
+    position: relative;
+    border-bottom: 1px solid #d1d7dc;
+}
+
+.card-img {
+    display: block;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(28, 29, 31, 0);
+    transition: all 0.4s ease;
+}
+
+.card-body {
+    padding: .8rem;
+    min-height: 10.4rem;
+}
+
+.course-name {
+    color: #1c1d1f;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: normal;
+    padding-bottom: .4rem;
+    word-wrap: break-word;
+}
+
+.course-instructor {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding-bottom: .4rem;
+}
+
+.course-price {
+    color: #1c1d1f;
+    font-size: 1.6rem;
+    font-weight: 700;
+}

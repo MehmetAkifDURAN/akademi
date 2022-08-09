@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+{% block page_title %}Üye Girişi - Akademi{% endblock %}
+{% block content %}
+<main>
+    <section>
+        <section class="account-container">
+            <div class="account-form-title">
+                <h1>Üye Girişi</h1>
+            </div>
+            <form id="login-form" class="account-form" method="POST" novalidate>
+                {% csrf_token %}
+
+                {% for error in form.non_field_errors %}
+                    <div class="alert-danger non-field-errors">{{ error }}</div>
+                {% endfor %}
+
+                {% for field in form %}
+                    <div class="form-item">
+                        {{ field }}
+                        {% if field.errors %}
+                            <div class="alert-danger field-errors">{{ field.errors }}</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <input type="submit" class="account-button" value="Giriş Yap">
+            </form>
+        </section>
+    </section>
+</main>
+{% endblock %}
+{% block js_files %}{% endblock %}

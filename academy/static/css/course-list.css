@@ -1,0 +1,20 @@
+/* alerts */
+.alert-danger {
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+    background-color: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+    border-radius: .4rem;
+    padding: .8rem;
+}
+
+.alert-danger-icon {
+    font-size: 7.2rem;
+}
+
+.alert-danger p {
+    font-size: 2rem;
+    font-weight: 500;
+}

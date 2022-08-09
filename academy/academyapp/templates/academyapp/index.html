@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+{% block page_title %}Akademi{% endblock %}
+{% block content %}
+<main>
+    <section>
+        <div class="container">
+            <div class="course-list-container">
+                <ul class="course-list">
+                    {% for course in courses %}
+                    <li class="course-list-item">
+                        <a href="" class="card">
+                            <div class="card-img-box">
+                                <img src="{% static course.image %}" class="card-img">
+                                <div class="img-overlay"></div>
+                            </div>
+                            <div class="card-body">
+                                <p class="course-name">{{ course.name }}</p>
+                                <p class="course-instructor">{{ course.instructor.first_name }} {{ course.instructor.last_name }}</p>
+                                <p class="course-price">&#8378;{{ course.unit_price }}</p>
+                            </div>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+{% block js_files %}{% endblock %}
