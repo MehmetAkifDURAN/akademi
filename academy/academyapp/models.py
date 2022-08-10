@@ -49,3 +49,16 @@ class Course(models.Model):
 
     def __str__(self):
         return f'{self.name} {self.instructor}'
+
+
+class WhichCourseAndStudent(models.Model):
+    student = models.ForeignKey(User, models.CASCADE, verbose_name='Öğrenci')
+    course = models.ForeignKey(Course, models.CASCADE, verbose_name='Kurs')
+    order_number = models.IntegerField('Sıra Numarası')
+
+    class Meta:
+        verbose_name = 'Kurs ve Öğrenci'
+        verbose_name_plural = 'Kurslar ve Öğrenciler'
+
+    def __str__(self):
+        return f'{self.student} {self.course}'

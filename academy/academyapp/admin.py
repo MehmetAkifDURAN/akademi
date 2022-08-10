@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CategoryLevelOne, CategoryLevelTwo, Course
+from .models import CategoryLevelOne, CategoryLevelTwo, Course, WhichCourseAndStudent
 
 # Register your models here.
 
@@ -25,6 +25,13 @@ class CourseAdmin(admin.ModelAdmin):
     list_filter = ('is_active', 'instructor', 'category_level_two')
 
 
+class WhichCourseAndStudentAdmin(admin.ModelAdmin):
+    list_display = ('student', 'course', 'order_number')
+    search_fields = ('student', 'course')
+    list_filter = ('student', 'course')
+
+
 admin.site.register(CategoryLevelOne, CategoryLevelOneAdmin)
 admin.site.register(CategoryLevelTwo, CategoryLevelTwoAdmin)
 admin.site.register(Course, CourseAdmin)
+admin.site.register(WhichCourseAndStudent, WhichCourseAndStudentAdmin)
